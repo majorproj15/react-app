@@ -1,30 +1,67 @@
-import React, { Fragment } from 'react';
-
-import {
-  Button, UncontrolledAlert, Card, CardImg, CardBody,
-  CardTitle, CardSubtitle, CardText
-} from 'reactstrap';
-
-const BANNER = 'https://i.imgur.com/CaKdFMq.jpg';
+import React from 'react';
 
 const LeftCard = () => (
-  <Fragment>
+  <div className='h-100 bg-light-gray left-nav'>
   
-    <UncontrolledAlert color="danger" className="d-none d-lg-block">
-      <strong>Account not activated.</strong>
-    </UncontrolledAlert>
+    <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start h-100" id="menu">
+      <li className="nav-item">
+          <a href="#" className="nav-link align-middle px-0">
+              <i className="fs-4 bi-house"></i> <span className="ms-1 d-none d-sm-inline">Home</span>
+          </a>
+      </li>
+      <li>
+          <a href="#submenu1" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
+              <i className="fs-4 bi-speedometer2"></i> <span className="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+          <ul className="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+              <li className="w-100">
+                  <a href="#" className="nav-link px-0"> <span className="d-none d-sm-inline">Item</span> 1 </a>
+              </li>
+              <li>
+                  <a href="#" className="nav-link px-0"> <span className="d-none d-sm-inline">Item</span> 2 </a>
+              </li>
+          </ul>
+      </li>
+      <li>
+          <a href="#" className="nav-link px-0 align-middle">
+              <i className="fs-4 bi-table"></i> <span className="ms-1 d-none d-sm-inline">Orders</span></a>
+      </li>
+      <li>
+          <a href="#submenu2" data-bs-toggle="collapse" className="nav-link px-0 align-middle ">
+              <i className="fs-4 bi-bootstrap"></i> <span className="ms-1 d-none d-sm-inline">Bootstrap</span></a>
+          <ul className="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+              <li className="w-100">
+                  <a href="#" className="nav-link px-0"> <span className="d-none d-sm-inline">Item</span> 1</a>
+              </li>
+              <li>
+                  <a href="#" className="nav-link px-0"> <span className="d-none d-sm-inline">Item</span> 2</a>
+              </li>
+          </ul>
+      </li>
+      <li>
+          <a href="#submenu3" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
+              <i className="fs-4 bi-grid"></i> <span className="ms-1 d-none d-sm-inline">Products</span> </a>
+              <ul className="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+              <li className="w-100">
+                  <a href="#" className="nav-link px-0"> <span className="d-none d-sm-inline">Product</span> 1</a>
+              </li>
+              <li>
+                  <a href="#" className="nav-link px-0"> <span className="d-none d-sm-inline">Product</span> 2</a>
+              </li>
+              <li>
+                  <a href="#" className="nav-link px-0"> <span className="d-none d-sm-inline">Product</span> 3</a>
+              </li>
+              <li>
+                  <a href="#" className="nav-link px-0"> <span className="d-none d-sm-inline">Product</span> 4</a>
+              </li>
+          </ul>
+      </li>
+      <li>
+          <a href="#" className="nav-link px-0 align-middle">
+              <i className="fs-4 bi-people"></i> <span className="ms-1 d-none d-sm-inline">Customers</span> </a>
+      </li>
+    </ul>
     
-    <Card>
-      <CardImg top width="100%" src={BANNER} alt="banner" />
-      <CardBody>
-        <CardTitle className="h3 mb-2 pt-2 font-weight-bold text-secondary">Lorem Ipsum</CardTitle>
-        <CardSubtitle className="text-secondary mb-3 font-weight-light text-uppercase" style={{ fontSize: '0.8rem' }}>Lorem Ipsum, Lagos</CardSubtitle>
-        <CardText className="text-secondary mb-4" style={{ fontSize: '0.75rem' }}>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a gallery of type and scrambled it to make a type specimen book</CardText>
-        <Button color="success" className="font-weight-bold">Lorem Ipsum</Button>
-      </CardBody>
-    </Card>
-    
-  </Fragment>
+  </div>
 );
 
 export default LeftCard;

@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react';
-import axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
 
-import Post from './components/Post';
+import ContentCard from './components/ContentCard';
 import Header from './components/Header';
 import LeftCard from './components/LeftCard';
 
@@ -11,16 +10,16 @@ const App = () => (
   
     <Header />
     
-    <main className="my-5 py-5">
-      <Container className="px-0">
-        <Row noGutters className="pt-2 pt-md-5 w-100 px-4 px-xl-0 position-relative">
+    <main className="main-container">
+      <Container fluid className="px-0 h-100">
+        <Row noGutters className="h-100">
         
-          <Col xs={{ order: 2 }} md={{ size: 4, order: 1 }} tag="aside" className="pb-5 mb-5 pb-md-0 mb-md-0 mx-auto mx-md-0">
+          <Col xs={{ order: 2 }} md={{ size: 2, order: 1 }} tag="aside" className="pb-5 mb-5 pb-md-0 mb-md-0 mx-auto mx-md-0 h-100">
             <LeftCard />
           </Col>
           
-          <Col xs={{ order: 1 }} md={{ size: 7, offset: 1 }} tag="section" className="py-5 mb-5 py-md-0 mb-md-0">
-            <Post />
+          <Col xs={{ order: 1 }} md={{ size: 10, offset: 0 }} tag="section" className="py-5 mb-5 py-md-0 mb-md-0">
+            <ContentCard />
           </Col>
           
         </Row>

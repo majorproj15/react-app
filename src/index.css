@@ -44,16 +44,47 @@ code {
 
 .left-nav ul li {
   width: 100%;
+}
+
+.left-nav ul li .nav-link{
+  color: black;  
+  border-left: 7px solid transparent;
+  border-radius: 0px;
   border-bottom: 1px solid #908a8a;
 }
 
-.left-nav ul li a{
+.left-nav ul li .nav-link:hover{
+  background-color: #696666;
   color: black;
 }
 
-.left-nav ul li a:hover{
+.left-nav ul li .nav-link.active{
+  border-left: 7px solid rgb(221, 71, 11);
+  border-radius: 0px;
+  background-color: #696666;
+}
+
+.left-nav ul li ul li .sub-nav-link{
+  color: black;
+  border-radius: 0px;
+  text-decoration: none;
+  padding-left: 15px !important;
+  border-bottom: 1px solid #908a8a;
+  width: 100%;
+  display: inline-block;  
+  padding: 5px 0px;
+}
+
+.left-nav ul li ul li .sub-nav-link:hover{
   background-color: #696666;
   color: black;
+}
+
+.left-nav ul li ul li .sub-nav-link.active{
+  border-radius: 0px;
+  background-color: #696666;  
+  /* font-weight: bold; */
+  color: white;
 }
 
 .border-aba6a6 {
@@ -87,4 +118,16 @@ code {
 {
     background-color: #6c757d !Important;
     border: solid 1px #6c757d;
+}
+
+.activeClassName {
+  background-color: yellow;
+}
+
+.prop-text {
+  display: inline;
+    color: rgb(221, 71, 11);
+    float: left;
+    position: relative;
+    top: 20px;
 }

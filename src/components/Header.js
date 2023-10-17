@@ -18,11 +18,11 @@ const Header = () => (
               <p className='pre-prod'>Pre Production</p>
               <ul className="navbar-nav px-3">
                 <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown">Hi, Venkat</a>
+                  <a className="nav-link dropdown-toggle text-light" role="button" data-bs-toggle="dropdown">Hi, Venkat</a>
                   <ul className="dropdown-menu">
-                    <li><a className="dropdown-item" href="#">Link</a></li>
-                    <li><a className="dropdown-item" href="#">2nd link</a></li>
-                    <li><a className="dropdown-item" href="#">third link</a></li>
+                    <li><a className="dropdown-item">Link</a></li>
+                    <li><a className="dropdown-item">2nd link</a></li>
+                    <li><a className="dropdown-item">third link</a></li>
                   </ul>
                 </li>
               </ul>

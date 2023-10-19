@@ -5,29 +5,32 @@ import { NavLink } from 'react-router-dom';
 export default class LeftCard extends React.Component {
     constructor(props) {
         super(props);
-        this.fileUpload = React.createRef();
-        this.showFileUpload = this.showFileUpload.bind(this);
       }
-    showFileUpload() {
-    this.fileUpload.current.click();
-    }
     getNavLinkClass = (path) => {
         return  'nav-item';
     }
 
-    render(){
-        
+    onSlectedItem(event, id){
+        this.selectedItem = id;   
+        debugger;     
+    }
+    
+
+    render(){    
+        let selectedItem = 'dashboard';
         const appRoutes = [
             {
                 title: 'Dashboard',
                 path: '/',
                 active: true,
+                id: 'dashboard',
                 children: null
             },
             {
                 title: 'Configuration',
                 path: '/configuration',
                 active: false,
+                id: 'configuration',
                 children: [
                     {
                         title: 'Properties',
@@ -59,6 +62,7 @@ export default class LeftCard extends React.Component {
                 title: 'Values',
                 path: '/values',
                 active: false,
+                id: 'values',
                 children: [
                     {
                         title: 'Welcome Messages',
@@ -82,6 +86,7 @@ export default class LeftCard extends React.Component {
                 title: 'Administration',
                 path: '/administration',
                 active: false,
+                id: 'administration',
                 children: [
                     {
                         title: 'User List',
@@ -111,17 +116,18 @@ export default class LeftCard extends React.Component {
                         
                         <li className={this.getNavLinkClass(item.path)}  key={item.title}>
                             {!item.children && (
-                                <NavLink exact to={item.path} className={({ isActive }) => (isActive ? 'active ' + defaultNavClass : defaultNavClass)}>
+                                <NavLink exact to={item.path} className={({ isActive }) => (isActive ? 'active ' + defaultNavClass : defaultNavClass)} onClick={(e) => {this.onSlectedItem(e, item.id)}}>
                                     <span className="ms-1 d-none d-sm-inline">{item.title}</span>
                                 </NavLink>
                             )}
                             {item.children && (
-                                <NavLink exact to={item.path} className={({ isActive }) => (isActive ? 'active ' + defaultNavClass : defaultNavClass)}>
+                                // className={({ isActive }) => (isActive ? 'active ' + defaultNavClass : defaultNavClass)}
+                                <a href={'#' + item.id} data-bs-toggle="collapse" className={` ${selectedItem === item.id ? 'active ' + defaultNavClass : defaultNavClass}`} onClick={(e) => {this.onSlectedItem(e, item.id)}}>
                                     <span className="ms-1 d-none d-sm-inline">{item.title}</span>
-                                </NavLink>
+                                </a>
                             )}
                             {item.children && (
-                                <ul className=" nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                                <ul className="collapse nav flex-column ms-1" id={item.id} data-bs-parent="#menu">
                                     {item.children.map(child => (
                                         <li className="w-100" key={child.title}>
                                             <NavLink exact to={item.path +child.path} className={({ isActive }) => (isActive ? 'active ' + defaultSubNavClass : defaultSubNavClass)}>

@@ -64,6 +64,14 @@ code {
   background-color: #696666;
 }
 
+.left-nav ul li .nav-link[aria-expanded=true] {
+  background-color: #828080;
+}
+
+.left-nav ul li ul.collapse.show {
+  background-color: #828080;
+}
+
 .left-nav ul li ul li .sub-nav-link{
   color: black;
   border-radius: 0px;
@@ -72,7 +80,8 @@ code {
   border-bottom: 1px solid #908a8a;
   width: 100%;
   display: inline-block;  
-  padding: 5px 0px;
+  padding: 5px 0px;  
+  border-left: 7px solid transparent;
 }
 
 .left-nav ul li ul li .sub-nav-link:hover{
@@ -80,7 +89,8 @@ code {
   color: black;
 }
 
-.left-nav ul li ul li .sub-nav-link.active{
+.left-nav ul li ul li .sub-nav-link.active{  
+  border-left: 7px solid rgb(221, 71, 11);
   border-radius: 0px;
   background-color: #696666;  
   /* font-weight: bold; */

@@ -141,3 +141,17 @@ code {
     position: relative;
     top: 20px;
 }
+
+.add-btn {
+  background-color: rgb(237, 76, 13);
+  color: white;
+}
+
+.add-btn:hover {
+  color: rgb(237, 76, 13);
+  background-color: white;
+}
+
+.react-bootstrap-table table {
+  border-top: 2px solid rgb(237, 76, 13);;
+}
